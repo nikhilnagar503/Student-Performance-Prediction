@@ -1,7 +1,9 @@
 import os 
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import logging
 import datetime
-import sys
+
 from src.exception import CustomException
 from src.logger import logging
 from dataclasses import dataclass
@@ -65,8 +67,6 @@ class DataIngestion:
         
 
 
-
-
 if __name__ == "__main__":
    logging.info("Starting data ingestion process")
    obj=DataIngestion()
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     #now we have the train and test data in the form of numpy array
    logging.info("Starting model training process")
    #now the data is ready to be trained
-   model_trainer_obj=ModelTrainer()
+   model_trainer_obj = ModelTrainer()
    
    
    print(model_trainer_obj.initiate_model_trainer(train_arr,test_arr))
