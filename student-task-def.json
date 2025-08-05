@@ -1,5 +1,6 @@
 {
   "family": "student-task",
+  "executionRoleArn": "arn:aws:iam::609110637932:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
