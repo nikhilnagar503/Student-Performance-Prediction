@@ -1,0 +1,28 @@
+{
+  "family": "student-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "student-container",
+      "image": "609110637932.dkr.ecr.eu-north-1.amazonaws.com/student-app:latest",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/student-task",
+          "awslogs-region": "eu-north-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "essential": true
+    }
+  ]
+}
