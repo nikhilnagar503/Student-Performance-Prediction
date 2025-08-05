@@ -1,14 +1,11 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from flask import Flask, request,render_template
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import GradientBoostingRegressor
 from pipelines.predict_pipeline import PredictPipeline, CustomData
-from exception import CustomException
-from logger import logging
+from src.exception import CustomException
+from src.logger import logging
 
 application = Flask(__name__)
 
